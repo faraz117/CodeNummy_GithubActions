@@ -20,7 +20,7 @@ jobs:
     - name: cd to cpp
       run: pwd
     - name: cd to cpp
-      run: cd ./cpp
+      run: cd /home/runner/work/CodeNummy_GithubActions/CodeNummy_GithubActions/cpp
     - name: Make build directory
       run: mkdir build
     - name: cd tp build directory
