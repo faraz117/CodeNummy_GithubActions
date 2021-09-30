@@ -23,8 +23,7 @@ jobs:
           mkdir build
           cd build   
     - name: Use cmake
-      run: cmake ../
+      run: cmake ../cpp
     - name: Run Tests
       run: |
-           cd ../
            ./tests/impl_tests
