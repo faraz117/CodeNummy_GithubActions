@@ -18,16 +18,13 @@ jobs:
         version: latest
         platform: x64
     - name: cd to cpp
-      run: pwd
-    - name: cd to cpp
-      run: cd /home/runner/work/CodeNummy_GithubActions/CodeNummy_GithubActions/cpp
-    - name: Make build directory
-      run: mkdir build
-    - name: cd tp build directory
-      run: cd build  
+      run: |
+          cd /home/runner/work/CodeNummy_GithubActions/cpp
+          mkdir build
+          cd build   
     - name: Use cmake
       run: cmake ../
     - name: Run Tests
-      run: cd ../
-    - name: Run executable
-      run: ./tests/impl_tests
+      run: |
+           cd ../
+           ./tests/impl_tests
