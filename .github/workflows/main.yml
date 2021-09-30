@@ -17,5 +17,15 @@ jobs:
       with:
         version: latest
         platform: x64
+    - name: cd to cpp
+      run: cd ./cpp
+    - name: Make build directory
+      run: mkdir build
+    - name: cd tp build directory
+      run: cd build  
     - name: Use cmake
-      run: cmake
+      run: cmake ../
+    - name: Run Tests
+      run: cd ../
+    - name: Run executable
+      run: ./tests/impl_tests
