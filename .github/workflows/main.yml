@@ -19,11 +19,13 @@ jobs:
         platform: x64
     - uses: actions/checkout@v2
     - name: Make build directory
+      working-directory: ${{github.workspace}}/cpp
       run: |
-          mkdir build
-          cd build   
-    - name: Use cmake
-      run: cmake ../cpp
+          mkdir build   
+    - name: Build with cmake
+      working-directory: ${{github.workspace}}/cpp/build
+      run: cmake ${{github.workspace}}/cpp
     - name: Run Tests
+      working-directory: ${{github.workspace}}/cpp
       run: |
            ./tests/impl_tests
