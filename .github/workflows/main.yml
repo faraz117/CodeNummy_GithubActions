@@ -10,6 +10,7 @@ jobs:
     steps:
     - name: Setup cmake
       uses: jwlawson/actions-setup-cmake@v1.9
+      uses: seanmiddleditch/gha-setup-ninja@master
       with:
         cmake-version: '3.16.x'
     - name: Set up GCC
@@ -25,7 +26,7 @@ jobs:
     - name: Build with cmake
       working-directory: ${{github.workspace}}/cpp/build
       run: |
-           cmake ${{github.workspace}}/cpp
+           cmake ${{github.workspace}}/cpp -DCMAKE_GENERATOR:INTERNAL=Ninja
            make
     - name: Run Tests
       working-directory: ${{github.workspace}}/cpp/build
