@@ -20,12 +20,8 @@ jobs:
         version: latest
         platform: x64
     - uses: actions/checkout@v2
-    - name: Make build directory
-      working-directory: ${{github.workspace}}/cpp
-      run: |
-          mkdir build
     - name: Build with cmake
-      working-directory: ${{github.workspace}}/cpp/build
+      working-directory: ${{github.workspace}}/cpp
       run: |
            mkdir build
            cd build
