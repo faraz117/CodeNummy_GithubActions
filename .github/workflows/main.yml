@@ -17,9 +17,9 @@ jobs:
       with:
         version: latest
         platform: x64
-    - name: cd to cpp
+    - uses: actions/checkout@v2
+    - name: Make build directory
       run: |
-          cd /home/runner/work/CodeNummy_GithubActions/cpp
           mkdir build
           cd build   
     - name: Use cmake
